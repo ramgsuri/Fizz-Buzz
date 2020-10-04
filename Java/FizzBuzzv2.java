@@ -12,11 +12,11 @@ public class FizzBuzzv2
     {
         for (int i = 1; i <= num; i++) 
         {
-            if (((i % 5) == 0) && ((i % 7) == 0)) // Is it a multiple of 5 & 7?
+            if (((i % 5) == 0) && ((i % 3) == 0)) // Is it a multiple of 5 & 7?
                 System.out.println("fizzbuzz");
-            else if ((i % 5) == 0) // Is it a multiple of 5?
+            else if ((i % 3) == 0) // Is it a multiple of 5?
                 System.out.println("fizz");
-            else if ((i % 7) == 0) // Is it a multiple of 7?
+            else if ((i % 5) == 0) // Is it a multiple of 7?
                 System.out.println("buzz");
             else
                 System.out.println(i); // Not a multiple of 5 or 7
@@ -25,7 +25,7 @@ public class FizzBuzzv2
  
     private static void fizzBuzzInJava8(int num) {
         IntStream.rangeClosed(1, 100)
-                .mapToObj(i -> i % 5 == 0 ? (i % 7 == 0 ? "FizzBuzz" : "Fizz") : (i % 7 == 0 ? "Buzz" : i))
+                .mapToObj(i -> i % 3 == 0 ? (i % 5 == 0 ? "FizzBuzz" : "Fizz") : (i % 5 == 0 ? "Buzz" : i))
                 .forEach(System.out::println);
     }
 }
